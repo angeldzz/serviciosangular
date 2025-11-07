@@ -18,5 +18,8 @@ export class PersonasApiComponent implements OnInit {
       console.log("Leyendo...");
       this.personas = response
     })
+    // this._service.getPersonasPromise().then(response => {
+    //   this.personas = response
+    // })
   }
 }

@@ -13,4 +13,14 @@ export class ServicePersona{
         let request = "api/personas"
         return this._http.get(urlApi + request)
     }
+    getPersonasPromise(): Promise<any>{
+        let urlApi = "https://servicioapipersonasmvcpgs.azurewebsites.net/"
+        let request = "api/personas"
+        let promise = new Promise((resolve)=>{
+            this._http.get(urlApi + request).subscribe(response => {
+                resolve(response)
+            })
+        })
+        return promise
+    }
 }
