@@ -14,7 +14,8 @@ import { ServicePersona } from '../../services/service.personas';
 export class PersonasstandaloneComponent implements OnInit{
   public personas!: Array<Persona>;
   constructor(private _service: ServicePersona) {}
-    ngOnInit() {
+    
+  ngOnInit() {
       this._service.getPersonasPromise().then(response => {
         this.personas = response
       })
