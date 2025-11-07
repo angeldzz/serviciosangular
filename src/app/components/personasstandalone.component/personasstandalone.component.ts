@@ -1,20 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Persona } from '../../models/persona';
 import { CommonModule } from '@angular/common';
+import { ServicePersona } from '../../services/service.personas';
 
 @Component({
   selector: 'app-personasstandalone',
   standalone: true,
   templateUrl: './personasstandalone.component.html',
   styleUrl: './personasstandalone.component.css',
-  imports: [CommonModule]
+  imports: [CommonModule],
+  providers: [ServicePersona]
 })
-export class PersonasstandaloneComponent {
+export class PersonasstandaloneComponent implements OnInit{
   public personas!: Array<Persona>;
-  constructor() {
-    this.personas = new Array<Persona>();
-    let p = new Persona(1,"A","B",22);
-    let p2 = new Persona(2,"C","D",22123);
-    this.personas.push(p,p2)
+  constructor(private _service: ServicePersona) {}
+    ngOnInit() {
+      this._service.getPersonasPromise().then(response => {
+        this.personas = response
+      })
   }
 }

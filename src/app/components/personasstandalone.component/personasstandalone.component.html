@@ -1,5 +1,12 @@
 <div>
     <h1>Componente Standalone True</h1>
+    <!-- <ul>
+        @for(persona of personas; track persona){
+        <li>
+            {{persona.Nombre}}, {{persona.Edad }}
+        </li>
+        }
+    </ul> -->
     <ul>
         <li *ngFor="let persona of personas">
             {{persona.Nombre}}, {{persona.Edad }}
