@@ -11,7 +11,7 @@ import { ServicePlantilla } from '../../services/service.plantilla';
 export class PlantillafuncionsimpleComponent implements OnInit {
     plantilla!: Array<Plantilla>;
     funciones!: Array<string>;
-    selectEmpleados!: string;
+    selectEmpleados!: Array<string>;
     constructor(private _service:ServicePlantilla) {
     }
     ngOnInit(): void {

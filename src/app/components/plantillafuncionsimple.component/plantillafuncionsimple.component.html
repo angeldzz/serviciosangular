@@ -9,9 +9,10 @@
     <h1>Plantilla</h1>
     <form #formulario="ngForm" (ngSubmit)="BuscarEmpleados()">
         <select 
+        multiple
         name="selectEmpleados" 
         [(ngModel)]="selectEmpleados"
-        #selectEmpleadosRef="ngModel">
+        #selectEmpleadosRef="ngModel" size="3">
         @for(funcion of funciones; track funcion){
             <option value="{{funcion}}">{{funcion}}</option>
         }
