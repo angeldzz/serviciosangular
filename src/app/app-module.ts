@@ -13,6 +13,7 @@ import { PlantillafuncionsimpleComponent } from './components/plantillafuncionsi
 import { ServicePlantilla } from './services/service.plantilla';
 import { NavbarComponent } from './components/navbar.component/navbar.component';
 import { FormsModule } from '@angular/forms';
+import { PlantillafuncionmultipleComponent } from './components/plantillafuncionmultiple.component/plantillafuncionmultiple.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { FormsModule } from '@angular/forms';
     CochesComponent,
     PlantillafuncionsimpleComponent,
     NavbarComponent,
+    PlantillafuncionmultipleComponent,
   ],
   imports: [
     BrowserModule,

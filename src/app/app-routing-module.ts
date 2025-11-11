@@ -4,12 +4,14 @@ import { PersonasApiComponent } from './components/personas-api-component/person
 import { CochesComponent } from './components/coches.component/coches.component';
 import { PlantillafuncionsimpleComponent } from './components/plantillafuncionsimple.component/plantillafuncionsimple.component';
 import { PersonasstandaloneComponent } from './components/personasstandalone.component/personasstandalone.component';
+import { PlantillafuncionmultipleComponent } from './components/plantillafuncionmultiple.component/plantillafuncionmultiple.component';
 
 const routes: Routes = [
   {path:"personas", component:PersonasApiComponent},
   {path:"personaStandalone", component:PersonasstandaloneComponent},
   {path:"coches", component:CochesComponent},
   {path:"plantilla", component:PlantillafuncionsimpleComponent},
+  {path:"plantillaMultiple", component:PlantillafuncionmultipleComponent},
 ];
 
 @NgModule({

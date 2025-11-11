@@ -1,0 +1,49 @@
+<div>
+    <!--  "idEmpleado": 0,
+            "idHospital": 0,
+            "idSala": 0,
+            "apellido": "string",
+            "funcion": "string",
+            "turno": "string",
+            "salario": 0 -->
+    <h1>Plantilla Multiple</h1>
+    <form #formulario="ngForm" (ngSubmit)="BuscarEmpleados()">
+        <select 
+        name="selectFuncion" 
+        #selectFuncion
+        multiple
+        size="5"
+        >
+        @for(funcion of funciones; track funcion){
+            <option value="{{funcion}}">{{funcion}}</option>
+        }
+    </select>
+    <button class="btn btn-primary">buscar empleados</button>
+    </form>
+    <table *ngIf="plantilla"  class="table table-light table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>idEmpleado</th>
+                <th>idHospital</th>
+                <th>idSala</th>
+                <th>apellido</th>
+                <th>funcion</th>
+                <th>turno</th>
+                <th>salario</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for(persona of plantilla; track persona){
+            <tr>
+                <td>{{ persona.idEmpleado }}</td>
+                <td>{{ persona.idHospital }}</td>
+                <td>{{ persona.idSala }}</td>
+                <td>{{ persona.apellido }}</td>
+                <td>{{ persona.funcion }}</td>
+                <td>{{ persona.turno }}</td>
+                <td>{{ persona.salario }}</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
