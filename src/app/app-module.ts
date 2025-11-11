@@ -7,11 +7,14 @@ import { provideHttpClient } from '@angular/common/http';
 import { PersonasApiComponent } from './components/personas-api-component/personas-api-component';
 import { ServicePersona } from './services/service.personas';
 import { PersonasstandaloneComponent } from './components/personasstandalone.component/personasstandalone.component';
+import { ServiceCoches } from './services/service.coches';
+import { CochesComponent } from './components/coches.component/coches.component';
 
 @NgModule({
   declarations: [
     App,
     PersonasApiComponent,
+    CochesComponent,
   ],
   imports: [
     BrowserModule,
@@ -21,7 +24,8 @@ import { PersonasstandaloneComponent } from './components/personasstandalone.com
   providers: [
     provideBrowserGlobalErrorListeners(),
     provideHttpClient(),
-    ServicePersona
+    ServicePersona,
+    ServiceCoches,
   ],
   bootstrap: [App]
 })
