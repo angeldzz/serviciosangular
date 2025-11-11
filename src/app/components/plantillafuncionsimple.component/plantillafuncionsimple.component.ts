@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Plantilla } from '../../models/plantilla';
 import { ServicePlantilla } from '../../services/service.plantilla';
 
@@ -11,7 +11,7 @@ import { ServicePlantilla } from '../../services/service.plantilla';
 export class PlantillafuncionsimpleComponent implements OnInit {
     plantilla!: Array<Plantilla>;
     funciones!: Array<string>;
-    selectEmpleados!: Array<string>;
+    @ViewChild("selectFuncion") selectFuncion!: ElementRef;
     constructor(private _service:ServicePlantilla) {
     }
     ngOnInit(): void {
@@ -20,7 +20,7 @@ export class PlantillafuncionsimpleComponent implements OnInit {
         })
     }
     BuscarEmpleados():void{
-        this._service.getPlantillaPorFuncion(this.selectEmpleados).then(response => {
+        this._service.getPlantillaPorFuncion(this.selectFuncion.nativeElement.value).then(response => {
             this.plantilla = response;
         })
     }
