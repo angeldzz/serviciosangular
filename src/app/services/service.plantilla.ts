@@ -1,5 +1,7 @@
+import { HttpClient } from "@angular/common/http";
 import { environment } from "../../environments/environment.development";
 import { Plantilla } from "../models/plantilla";
+import { Observable } from "rxjs";
 
 export class ServicePlantilla{
     // "idEmpleado": 0,
@@ -21,5 +23,11 @@ export class ServicePlantilla{
     async getPlantillaFunciones():Promise<Array<string>>{
         let request = environment.urlPlantilla + "api/Plantilla/Funciones"
         return fetch(request).then(response => response.json())
+    }
+    // La Forma de hacerlo con Diamods ---.get<string>()---
+    constructor(private _http: HttpClient) {
+    }
+    getPlantillasObservable(): Observable<Array<string>>{
+        return this._http.get<Array<string>>(environment.urlPlantilla + "api/Plantilla/Funciones")
     }
 }
